@@ -3,7 +3,6 @@ package ru.suleymanovtat.repository
 import ru.suleymanovtat.entity.Todo
 import ru.suleymanovtat.entity.TodoDraft
 import java.util.*
-import kotlin.random.Random.Default.nextLong
 
 class TodoRepositoryImpl : TodoRepository {
 
