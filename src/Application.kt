@@ -27,7 +27,6 @@ fun Application.module(testing: Boolean = false) {
 
 
     routing {
-
 //        val todoRepository: TodoRepository = MySQLTodoRepository()
         val todoRepository: TodoRepository = TodoRepositoryImpl()
 
