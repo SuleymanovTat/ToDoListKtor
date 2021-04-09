@@ -10,6 +10,7 @@ import io.ktor.routing.*
 import ru.suleymanovtat.entity.TodoDraft
 import ru.suleymanovtat.repository.MySQLTodoRepository
 import ru.suleymanovtat.repository.TodoRepository
+import ru.suleymanovtat.repository.TodoRepositoryImpl
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -27,7 +28,8 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
 
-        val todoRepository: TodoRepository = MySQLTodoRepository()
+//        val todoRepository: TodoRepository = MySQLTodoRepository()
+        val todoRepository: TodoRepository = TodoRepositoryImpl()
 
         get("/") {
             call.respondText("Hello Suleymnaovtat")

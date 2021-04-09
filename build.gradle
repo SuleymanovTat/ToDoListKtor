@@ -5,11 +5,13 @@ buildscript {
     
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
     }
 }
 
 apply plugin: 'kotlin'
 apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'ru.suleymanovtat'
 version '1.0.1'
@@ -25,6 +27,13 @@ sourceSets {
 repositories {
     mavenLocal()
     jcenter()
+}
+
+shadowJar {
+    archiveFileName = "todo-tat.jar"
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
 }
 
 dependencies {
